@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.interfaz_principal {
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    display: flex;
+    height: 400px;
+    width: 400px;
+}
+
+#opciones{
+    display: flex;
+}
