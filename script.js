@@ -13,26 +13,44 @@ const imagenes = [
     }
 ];
 
-function numAzar() {
-    var numAzar = Math.floor(Math.random() * imagenes.length);
-    return imagenes[numAzar];
-}
+const imgResultado = [
+    {
+        nombre: 'x',
+        imagen: "https://img.freepik.com/vector-premium/simbolo-x-rojo_1102-4135.jpg?w=2000"
+    },
+    {
+        nombre: 'tilde',
+        imagen: "https://us.123rf.com/450wm/inueng/inueng1610/inueng161000004/67663749-ilustraci%C3%B3n-vectorial-casilla-de-verificaci%C3%B3n-verde-aislado-en-el-fondo-blanco.jpg?ver=6"
+    }
+]
+
+/**
+ * 
+ * elige una posicion al azar en el array imagenes
+ */
+
 
 function cambiar_imagen(img, elemento) {
     var imagenCambiar = document.getElementById(elemento);
     imagenCambiar.src = img;
 }
 
+
+
 function OpcionUsuario() {
     var opciones = document.getElementById("opciones");
     return opciones.value;
 }
+
 
 function OpcionMaquina() {
     var numAzar = Math.floor(Math.random() * imagenes.length);
     return imagenes[numAzar].nombre;
 }
 
+/**
+ * Compara la opcion elegida por el usuario y la opcion aleatoria de la maquina y 
+ */
 function compararOpciones(opcUsuario, opcMaquina) {
     if (opcUsuario === opcMaquina) {
         return "Empate";
@@ -47,6 +65,9 @@ function compararOpciones(opcUsuario, opcMaquina) {
     }
 }
 
+/**
+ * inicia el juego, busca las imagenes, cambia las imagenes por la eleccion del usuario y muestra el resultado
+ */
 function pruebaSuerte() {
     var opcionUsuario = OpcionUsuario();
     var imgElegida = imagenes.find(imagen => imagen.nombre === opcionUsuario).imagen;
@@ -57,6 +78,10 @@ function pruebaSuerte() {
     cambiar_imagen(imgMaquina, "imagenMaquina");
 
     var resultado = compararOpciones(opcionUsuario, opcionMaquina);
+mostrarResultado(resultado)
+    alert( resultado);
+}
+function mostrarResultado(resultado){
 
-    alert("Opción de la máquina: " + opcionMaquina + "\n" + resultado);
+    document.getElementById("resultado-jugadas").textContent = resultado;
 }

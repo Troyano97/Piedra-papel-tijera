@@ -11,22 +11,29 @@
 <body>
 
     <header>
+        <h1>Welcome stranger</h1>
         <img id="img_usuario" src="https://miro.medium.com/v2/resize:fit:1400/1*yHZKuUPofUf39CpZ6frmxw.png" alt="">
 
-
     </header>
+    
+    <div>Bot Jose</div>
 
-    <div class="interfaz_principal">
+    <div class="interfaz-resultado">
 
         <img src="https://play-lh.googleusercontent.com/sbt3FBvvd-vbSp5vwg8SDmyueYYkt0c0Qd7O4vBy8J2LG2QgyOakBRkuobUiC3nUFSg"
             id="imagenElegida">
 
         <div class="resultado_bot">
-            <h2>Bot Jose</h2>
-            <img src="" id="imagenMaquina">
+            <img src="https://play-lh.googleusercontent.com/sbt3FBvvd-vbSp5vwg8SDmyueYYkt0c0Qd7O4vBy8J2LG2QgyOakBRkuobUiC3nUFSg" id="imagenMaquina">
         </div>
     </div>
 
+    <div id="historial-jugadas">
+        <img id="resultado-ismg" src="" alt="">
+
+    </div>
+
+    <div class="opciones_boton"></div>
     <select id="opciones">
         <option value="piedra">Piedra</option>
         <option value="papel">Papel</option>
@@ -34,7 +41,11 @@
 
     </select>
 
-    <button onclick="pruebaSuerte()">Prueba tu suerte</button>
+    <div>
+        <p id="resultado-jugadas"></p>
+    </div>
+
+    <button id="boton_iniciar" onclick="pruebaSuerte()">Prueba tu suerte</button>
 
     <script src="script.js"></script>
 
